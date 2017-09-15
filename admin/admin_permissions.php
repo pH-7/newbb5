@@ -119,7 +119,7 @@ class NewbbXoopsGroupPermForm extends XoopsGroupPermForm
                 if ('' !== $elements[$i]->getDescription()) {
                     $ret .= '<br><br><span style="font-weight: normal;">' . $elements[$i]->getDescription() . '</span>';
                 }
-                $ret .= "</td>\n<td class='even'>\n" . $elements[$i]->render() . "\n</td></tr>\n";
+                $ret .= "</td>\n<td class='even' style='text-align:center;'>\n" . $elements[$i]->render() . "\n</td></tr>\n";
             } else {
                 $hidden .= $elements[$i]->render();
             }
@@ -214,7 +214,7 @@ switch ($action) {
         xoops_cp_header();
         $adminObject->displayNavigation(basename(__FILE__));
         echo "<legend style='font-weight: bold; color: #900;'>" . _AM_NEWBB_PERM_ACTION . '</legend>';
-        $opform    = new XoopsSimpleForm(_AM_NEWBB_PERM_ACTION, 'actionform', 'admin_permissions.php', 'get');
+        $opform    = new XoopsSimpleForm(_AM_NEWBB_PERM_ACTION_HELP_TEMPLAT, 'actionform', 'admin_permissions.php', 'get');
         $op_select = new XoopsFormSelect('', 'action');
         $op_select->setExtra('onchange="document.forms.actionform.submit()"');
         $op_select->addOptionArray([
@@ -260,16 +260,16 @@ switch ($action) {
         $ret = '<h4>' . _AM_NEWBB_PERM_TEMPLATE . '</h4>' . _AM_NEWBB_PERM_TEMPLATE_DESC . '<br><br><br>';
         $ret .= "<form name='template' id='template' method='post'>\n<table width='100%' class='outer' cellspacing='1'>\n";
         $ret .= implode("\n", $elements);
-        $ret .= '<tr align="left" valign="top"><td class="head"></td><td class="even">';
+        $ret .= '<tr align="left" valign="top"><td class="head"></td><td class="even" style="text-align:center;">';
         $ret .= $tray->render();
         $ret .= '</td></tr>';
         $ret .= '</table></form>';
         echo $ret;
         include_once __DIR__ . '/admin_footer.php';
         break;
-
+                                                
     case 'template_save':
-        //        $res = $newbbpermHandler->setTemplate($_POST['perms'], $groupid = 0);
+        //        $res = $newbbpermHandler->setTemplate($_POST['perms'], $groupid = 0); 
         $res = $newbbpermHandler->setTemplate(Request::getArray('perms', '', 'POST'), $groupid = 0);
         if ($res) {
             redirect_header('admin_permissions.php', 2, _AM_NEWBB_PERM_TEMPLATE_CREATED);
@@ -287,7 +287,7 @@ switch ($action) {
         xoops_cp_header();
         $adminObject->displayNavigation(basename(__FILE__));
         echo "<legend style='font-weight: bold; color: #900;'>" . _AM_NEWBB_PERM_ACTION . '</legend>';
-        $opform    = new XoopsSimpleForm(_AM_NEWBB_PERM_ACTION, 'actionform', 'admin_permissions.php', 'get');
+        $opform    = new XoopsSimpleForm(_AM_NEWBB_PERM_ACTION_HELP_APPLY, 'actionform', 'admin_permissions.php', 'get');
         $op_select = new XoopsFormSelect('', 'action');
         $op_select->setExtra('onchange="document.forms.actionform.submit()"');
         $op_select->addOptionArray([
@@ -365,7 +365,7 @@ switch ($action) {
 
         $adminObject->displayNavigation(basename(__FILE__));
         echo "<legend style='font-weight: bold; color: #900;'>" . _AM_NEWBB_PERM_ACTION . '</legend>';
-        $opform    = new XoopsSimpleForm(_AM_NEWBB_PERM_ACTION, 'actionform', 'admin_permissions.php', 'get');
+        $opform    = new XoopsSimpleForm(_AM_NEWBB_PERM_ACTION_HELP, 'actionform', 'admin_permissions.php', 'get');
         $op_select = new XoopsFormSelect('', 'action');
         $op_select->setExtra('onchange="document.forms.actionform.submit()"');
         $op_select->addOptionArray([
