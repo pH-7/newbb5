@@ -74,6 +74,7 @@ define('_AM_NEWBB_DIGEST_HELP_1', 'Allows you to create and send notifications a
 define('_AM_NEWBB_DIGEST_HELP_2', 'Create a newsletter is possible only after the topic is marked as \'Digest\'.');
 define('_AM_NEWBB_DIGEST_HELP_3', 'The dispatch is made only to users signed up for notification of digest topics.');
 define('_AM_NEWBB_DIGEST_HELP_4', 'After creating and sending, do not delete the created messages. Otherwise they will be generated again.');
+define('_AM_NEWBB_DIGEST_HELP_AUTO_DIGEST', 'To configure the automatic creation and distribution of Digest topics, you need to create a cron task on your server.<br>For example: * NIX systems: <strong>0 6 * * * wget --post-data \'foo=bar\' https://example.com/modules/newbb/digest.php</strong><br>In this example, the script will run every day at 6.00 and check if there are any new Digest topics. If they are not found, mailing will not be done.<br>If for any reason you do not have the opportunity to create a task, then it is possible to create and make the dispatch on this page manually by clicking on the button above.<br>Please note that it is not recommended to delete created mailings, otherwise they will be created and sent again.');
 //define('_AM_NEWBB_DIGEST_PAST', '<span style="color:red;">Should be sent out %d minutes ago</span>');
 //define('_AM_NEWBB_DIGEST_NEXT', 'Need to send out in %d minutes');
 //define('_AM_NEWBB_DIGEST_ARCHIVE', 'Digest archive');
@@ -317,3 +318,7 @@ define('_AM_NEWBB_ERROR_COLUMN', 'Could not create column in database : %s');
 define('_AM_NEWBB_ERROR_BAD_XOOPS', 'This module requires XOOPS %s+ (%s installed)');
 define('_AM_NEWBB_ERROR_BAD_PHP', 'This module requires PHP version %s+ (%s installed)');
 define('_AM_NEWBB_ERROR_TAG_REMOVAL', 'Could not remove tags from Tag Module');
+
+// Help tab
+define('_AM_NEWBB_HELP_CATEGORY_TAB', 'To create a category, use the button above and fill in all the fields on the form.<br>By default, category images are located: /modules/newbb/assets/images/category/<br>Sponsor link should be written in the following format: https://xoops.org/modules/newbb/ newBB Support. First the link, then the sponsor\'s name or other text.');
+define('_AM_NEWBB_HELP_FORUM_TAB', 'To create and manage the forums use the buttons with the right<br>To create the forum, use the \'Create forum\' button. Then fill in all the fields of the form. You can also create a subforum.<br>To move the forum between categories, use the \'Move\' button. Follow the further instructions.<br>To merge forums, use the \'Merge\' button. Follow the further instructions.');
