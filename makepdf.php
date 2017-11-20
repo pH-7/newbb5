@@ -37,6 +37,7 @@ $attach_id = Request::getString('attachid', '', 'GET');
 $forum    = Request::getInt('forum', 0, 'GET');
 $topic_id = Request::getInt('topic_id', 0, 'GET');
 $post_id  = Request::getInt('post_id', 0, 'GET');
+
 if (!is_file(XOOPS_ROOT_PATH . '/class/libraries/vendor/tecnickcom/tcpdf/tcpdf.php')) {
     redirect_header(XOOPS_URL . '/modules/' . $xoopsModule->getVar('dirname') . '/viewtopic.php?topic_id=' . $topic_id, 3, 'TCPDF for Xoops not installed');
 }
@@ -127,6 +128,9 @@ $lg['w_page']          = 'page';
 // set some language-dependent strings (optional)
 $pdf->setLanguageArray($lg);
 //$pdf->setLanguageArray($localLanguageOptions);
+// set some language-dependent strings (optional)
+$pdf->setLanguageArray($lg);
+//$pdf->setLanguageArray($localLanguageOptions);
 // START irmtfan hack to add RTL-LTR local
 // until _RTL added to core 2.6.0
 if (!defined('_RTL')) {
@@ -154,6 +158,6 @@ $pdf->setFooterData($tc = [0, 64, 0], $lc = [0, 64, 128]);
 $pdf->Open();
 $pdf->AddPage();
 //$pdf->SetFont(PDF_FONT_NAME_MAIN, PDF_FONT_STYLE_MAIN, PDF_FONT_SIZE_MAIN);
-$pdf->SetFont('dejavusans', '', 10);
+$pdf->SetFont('dejavusans', '', 12);
 $pdf->writeHTML($pdf_data['content'], true, 0);
 $pdf->Output($pdf_data['topic_title'] . '_' . $post_id . '.pdf', 'I');
