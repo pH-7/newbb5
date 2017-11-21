@@ -123,8 +123,8 @@ $lg                    = [];
 $lg['a_meta_charset']  = _CHARSET;
 //$lg['a_meta_dir']      = _MD_NEWBB_PDF_META_DIR;
 $lg['a_meta_language'] = _LANGCODE;
-//$lg['w_page']          = _MD_NEWBB_PDF_PAGE;
-$lg['w_page']          = 'page';
+$lg['w_page']          = _MD_NEWBB_PDF_PAGE2;
+
 // set some language-dependent strings (optional)
 $pdf->setLanguageArray($lg);
 //$pdf->setLanguageArray($localLanguageOptions);
@@ -138,18 +138,22 @@ if (!defined('_RTL')) {
 }
 $pdf->setRTL(_RTL);
 // END irmtfan hack to add RTL-LTR local
+
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor(PDF_AUTHOR);
 $pdf->SetTitle($pdf_data['forum_title'] . ' - ' . $pdf_data['subject']);
 $pdf->SetSubject($pdf_data['subject']);
 $pdf->SetKeywords($pdf_data['keywords']);
+
 //$pdf->SetHeaderData('', '5', $pdf_data['HeadFirstLine'], $pdf_data['HeadSecondLine']);
 $pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, $pdf_data['HeadFirstLine'], $pdf_data['HeadSecondLine'], [0, 64, 255], [0, 64, 128]);
+
 //set margins
 $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
 $pdf->setHeaderMargin(PDF_MARGIN_HEADER);
 $pdf->setFooterMargin(PDF_MARGIN_FOOTER);
+
 //set auto page breaks
 $pdf->SetAutoPageBreak(true, 25);
 $pdf->setHeaderFont([PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN]);
@@ -157,6 +161,7 @@ $pdf->setFooterFont([PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA]);
 $pdf->setFooterData($tc = [0, 64, 0], $lc = [0, 64, 128]);
 $pdf->Open();
 $pdf->AddPage();
+
 //$pdf->SetFont(PDF_FONT_NAME_MAIN, PDF_FONT_STYLE_MAIN, PDF_FONT_SIZE_MAIN);
 $pdf->SetFont('dejavusans', '', 12);
 $pdf->writeHTML($pdf_data['content'], true, 0);
