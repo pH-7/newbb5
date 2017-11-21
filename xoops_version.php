@@ -705,7 +705,6 @@ $modversion['config'][] = [
     'formtype'    => 'textbox',
     'default'     => 'xoopspoll',
 ];
-
 $modversion['config'][] = [
     'name'        => 'forum_desc_length',
     'title'       => '_MI_NEWBB_FORUM_DESC_LENGTH',
