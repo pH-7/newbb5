@@ -45,7 +45,7 @@ xoops_load('utility', NEWBB_DIRNAME);
 //xoops_load('XoopsRequest');
 //xoops_load('XoopsFilterInput');
 
-require_once NEWBB_ROOT_PATH . '/class/helper.php';
+require_once NEWBB_ROOT_PATH . '/class/Helper.php';
 
 $debug     = false;
 $helper = newbb\Helper::getInstance($debug);
