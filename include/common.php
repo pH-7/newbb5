@@ -52,6 +52,7 @@ $mod_copyright = "<a href='https://xoops.org' title='XOOPS Project' target='_bla
 $helper->loadLanguage('common');
 
 
+require_once NEWBB_ROOT_PATH . '/class/Helper.php';
 
 //$debug     = false;
 //$helper = newbb\Helper::getInstance($debug);
