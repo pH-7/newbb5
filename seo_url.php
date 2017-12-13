@@ -4,7 +4,7 @@
 define('REAL_MODULE_NAME', 'modules/newbb');  //this is the Real Module directory
 define('SEO_MODULE_NAME', 'modules/newbb');  //this is SEO Name for rewrite Hack
 
-ob_start('seo_urls');
+//ob_start('seo_urls');
 
 /**
  * @param $s
