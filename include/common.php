@@ -19,7 +19,7 @@
  * @author          XOOPS Development Team - Email:<name@site.com> - Website:<https://xoops.org>
  */
 
-use Xoopsmodules\newbb;
+use XoopsModules\Newbb;
 
 // defined('XOOPS_ROOT_PATH') || exit('Restricted access.');
 
@@ -29,10 +29,10 @@ require_once __DIR__ . '/../class/Helper.php';
 require_once __DIR__ . '/../class/Utility.php';
 
 $db = \XoopsDatabaseFactory::getDatabase();
-$helper = \Xoopsmodules\newbb\Helper::getInstance();
+$helper = \XoopsModules\Newbb\Helper::getInstance();
 
-/** @var \Xoopsmodules\newbb\Utility $utility */
-$utility = new newbb\Utility();
+/** @var \XoopsModules\Newbb\Utility $utility */
+$utility = new Newbb\Utility();
 
 define('NEWBB_DIRNAME', basename(dirname(__DIR__)));
 define('NEWBB_URL', XOOPS_URL . '/modules/' . NEWBB_DIRNAME);
@@ -55,7 +55,7 @@ $helper->loadLanguage('common');
 require_once NEWBB_ROOT_PATH . '/class/Helper.php';
 
 //$debug     = false;
-//$helper = newbb\Helper::getInstance($debug);
+//$helper = Newbb\Helper::getInstance($debug);
 
 //This is needed or it will not work in blocks.
 global $newbbIsAdmin;
@@ -63,7 +63,7 @@ global $newbbIsAdmin;
 // Load only if module is installed
 if (is_object($helper->getModule())) {
     // Find if the user is admin of the module
-    $publisherIsAdmin = newbb\Utility::userIsAdmin();
+    $publisherIsAdmin = Newbb\Utility::userIsAdmin();
 }
 
 //$db = \XoopsDatabaseFactory::getDatabase();
