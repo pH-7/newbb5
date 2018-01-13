@@ -45,24 +45,24 @@ $modversion    = [
     'sqlfile'             => ['mysql' => 'sql/mysql.sql'],
     // ------------------- Tables ----------------------------
     'tables'              => [
-    $moduleDirName . '_' . 'archive',
-    $moduleDirName . '_' . 'categories',
-    $moduleDirName . '_' . 'votedata',
-    $moduleDirName . '_' . 'forums',
-    $moduleDirName . '_' . 'posts',
-    $moduleDirName . '_' . 'posts_text',
-    $moduleDirName . '_' . 'topics',
-    $moduleDirName . '_' . 'online',
-    $moduleDirName . '_' . 'digest',
-    $moduleDirName . '_' . 'report',
-    $moduleDirName . '_' . 'attachments',
-    $moduleDirName . '_' . 'moderates',
-    $moduleDirName . '_' . 'reads_forum',
-    $moduleDirName . '_' . 'reads_topic',
-    $moduleDirName . '_' . 'type',
-    $moduleDirName . '_' . 'type_forum',
-    $moduleDirName . '_' . 'stats',
-    $moduleDirName . '_' . 'user_stats'
+        $moduleDirName . '_' . 'archive',
+        $moduleDirName . '_' . 'categories',
+        $moduleDirName . '_' . 'votedata',
+        $moduleDirName . '_' . 'forums',
+        $moduleDirName . '_' . 'posts',
+        $moduleDirName . '_' . 'posts_text',
+        $moduleDirName . '_' . 'topics',
+        $moduleDirName . '_' . 'online',
+        $moduleDirName . '_' . 'digest',
+        $moduleDirName . '_' . 'report',
+        $moduleDirName . '_' . 'attachments',
+        $moduleDirName . '_' . 'moderates',
+        $moduleDirName . '_' . 'reads_forum',
+        $moduleDirName . '_' . 'reads_topic',
+        $moduleDirName . '_' . 'type',
+        $moduleDirName . '_' . 'type_forum',
+        $moduleDirName . '_' . 'stats',
+        $moduleDirName . '_' . 'user_stats'
     ],
     // ------------------- Admin Menu -------------------
     'system_menu'         => 1,
@@ -234,7 +234,7 @@ $modversion['blocks'][] = [
 // Smarty
 $modversion['use_smarty'] = 1;
 // Configs
-$modversion['config'] = [];
+$modversion['config']   = [];
 $modversion['config'][] = [
     'name'        => 'do_rewrite',
     'title'       => '_MI_NEWBB_DO_REWRITE',
@@ -722,7 +722,7 @@ $modversion['notification']                = [];
 $modversion['hasNotification']             = 1;
 $modversion['notification']['lookup_file'] = 'include/notification.inc.php';
 $modversion['notification']['lookup_func'] = 'newbb_notify_iteminfo';
-$modversion['notification']['category'][] = [
+$modversion['notification']['category'][]  = [
     'name'           => 'thread',
     'title'          => _MI_NEWBB_THREAD_NOTIFY,
     'description'    => _MI_NEWBB_THREAD_NOTIFYDSC,
@@ -730,7 +730,7 @@ $modversion['notification']['category'][] = [
     'item_name'      => 'topic_id',
     'allow_bookmark' => 1,
 ];
-$modversion['notification']['category'][] = [
+$modversion['notification']['category'][]  = [
     'name'           => 'forum',
     'title'          => _MI_NEWBB_FORUM_NOTIFY,
     'description'    => _MI_NEWBB_FORUM_NOTIFYDSC,
@@ -738,13 +738,13 @@ $modversion['notification']['category'][] = [
     'item_name'      => 'forum',
     'allow_bookmark' => 1,
 ];
-$modversion['notification']['category'][] = [
+$modversion['notification']['category'][]  = [
     'name'           => 'global',
     'title'          => _MI_NEWBB_GLOBAL_NOTIFY,
     'description'    => _MI_NEWBB_GLOBAL_NOTIFYDSC,
     'subscribe_from' => 'index.php',
 ];
-$modversion['notification']['event'][] = [
+$modversion['notification']['event'][]     = [
     'name'          => 'new_post',
     'category'      => 'thread',
     'title'         => _MI_NEWBB_THREAD_NEWPOST_NOTIFY,
@@ -753,7 +753,7 @@ $modversion['notification']['event'][] = [
     'mail_template' => 'thread_newpost_notify',
     'mail_subject'  => _MI_NEWBB_THREAD_NEWPOST_NOTIFYSBJ,
 ];
-$modversion['notification']['event'][] = [
+$modversion['notification']['event'][]     = [
     'name'          => 'new_thread',
     'category'      => 'forum',
     'title'         => _MI_NEWBB_FORUM_NEWTHREAD_NOTIFY,
@@ -762,7 +762,7 @@ $modversion['notification']['event'][] = [
     'mail_template' => 'forum_newthread_notify',
     'mail_subject'  => _MI_NEWBB_FORUM_NEWTHREAD_NOTIFYSBJ,
 ];
-$modversion['notification']['event'][] = [
+$modversion['notification']['event'][]     = [
     'name'          => 'new_forum',
     'category'      => 'global',
     'title'         => _MI_NEWBB_GLOBAL_NEWFORUM_NOTIFY,
@@ -771,7 +771,7 @@ $modversion['notification']['event'][] = [
     'mail_template' => 'global_newforum_notify',
     'mail_subject'  => _MI_NEWBB_GLOBAL_NEWFORUM_NOTIFYSBJ,
 ];
-$modversion['notification']['event'][] = [
+$modversion['notification']['event'][]     = [
     'name'          => 'new_post',
     'category'      => 'global',
     'title'         => _MI_NEWBB_GLOBAL_NEWPOST_NOTIFY,
@@ -780,7 +780,7 @@ $modversion['notification']['event'][] = [
     'mail_template' => 'global_newpost_notify',
     'mail_subject'  => _MI_NEWBB_GLOBAL_NEWPOST_NOTIFYSBJ,
 ];
-$modversion['notification']['event'][] = [
+$modversion['notification']['event'][]     = [
     'name'          => 'new_post',
     'category'      => 'forum',
     'title'         => _MI_NEWBB_FORUM_NEWPOST_NOTIFY,
@@ -789,7 +789,7 @@ $modversion['notification']['event'][] = [
     'mail_template' => 'forum_newpost_notify',
     'mail_subject'  => _MI_NEWBB_FORUM_NEWPOST_NOTIFYSBJ,
 ];
-$modversion['notification']['event'][] = [
+$modversion['notification']['event'][]     = [
     'name'          => 'new_fullpost',
     'category'      => 'global',
     'admin_only'    => 1,
@@ -799,7 +799,7 @@ $modversion['notification']['event'][] = [
     'mail_template' => 'global_newfullpost_notify',
     'mail_subject'  => _MI_NEWBB_GLOBAL_NEWFULLPOST_NOTIFYSBJ,
 ];
-$modversion['notification']['event'][] = [
+$modversion['notification']['event'][]     = [
     'name'          => 'digest',
     'category'      => 'global',
     'title'         => _MI_NEWBB_GLOBAL_DIGEST_NOTIFY,
@@ -808,7 +808,7 @@ $modversion['notification']['event'][] = [
     'mail_template' => 'global_digest_notify',
     'mail_subject'  => _MI_NEWBB_GLOBAL_DIGEST_NOTIFYSBJ,
 ];
-$modversion['notification']['event'][] = [
+$modversion['notification']['event'][]     = [
     'name'          => 'new_fullpost',
     'category'      => 'forum',
     'admin_only'    => 1,
