@@ -56,7 +56,7 @@ if (is_object($pollModuleHandler) && $pollModuleHandler->getVar('isactive')) {
         $xpPollHandler = Xoopspoll\Helper::getInstance()->getHandler('Poll');
         /** @var Xoopspoll\LogHandler $xpLogHandler */
         $xpLogHandler = Xoopspoll\Helper::getInstance()->getHandler('Log');
-        /** @var \XoopsPoll $pollObject */
+        /** @var Xoopspoll $pollObject */
         $pollObject = $xpPollHandler->get($poll_id); // will create poll if poll_id = 0 exist
         // old xoopspoll or umfrage or any clone from them
     } else {
@@ -107,8 +107,8 @@ if ($pollModuleHandler->getVar('version') >= 140) {
                 if (!is_object($GLOBALS['xoopsUser'])) {
                     xoops_load('pollUtility', $GLOBALS['xoopsModuleConfig']['poll_module']);
                     /** @var Xoopspoll\Utility $classPollUtility */
-                    $classPollUtility = new \Xoopspoll\Utility();
-                    $classXoopspoll\Utility::setVoteCookie($poll_id, $voteTime, 0);
+                    $classPollUtility = new Xoopspoll\Utility();
+                    $classPollUtility::setVoteCookie($poll_id, $voteTime, 0);
                 }
             } else {
                 $msg = constant('_MD_' . strtoupper($GLOBALS['xoopsModuleConfig']['poll_module']) . '_CANNOTVOTE');
