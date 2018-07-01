@@ -70,7 +70,6 @@ if ($GLOBALS['xoopsModuleConfig']['wol_enabled']) {
 $error_message = [];
 
 if (Request::getString('contents_submit', '', 'POST')) {
-    $token_valid = false;
     $token_valid = $GLOBALS['xoopsSecurity']->check();
 
     $captcha_invalid = false;
