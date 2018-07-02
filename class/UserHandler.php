@@ -21,12 +21,17 @@ defined('NEWBB_FUNCTIONS_INI') || include $GLOBALS['xoops']->path('modules/newbb
  */
 class UserHandler
 {
-    public $enableGroup;
-    public $enableOnline;
-    public $userlist = [];
-    public $users    = [];
+    /** @var array */
+    public $users = [];
 
-    //var $online = array();
+    /** @var bool */
+    private $enableGroup;
+
+    /** @var bool */
+    private $enableOnline;
+
+    /** @var array */
+    private $userlist = [];
 
     /**
      * @param bool $enableGroup
